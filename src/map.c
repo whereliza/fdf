@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clothor- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fcorrupt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/22 11:59:00 by clothor-          #+#    #+#             */
-/*   Updated: 2019/09/12 10:20:20 by clothor-         ###   ########.fr       */
+/*   Created: 2019/11/27 21:28:11 by fcorrupt          #+#    #+#             */
+/*   Updated: 2019/11/27 21:41:00 by fcorrupt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		fill_colors(t_map *m)
 		while (v.x < m->width)
 		{
 			cur = m->vectors[(int)v.y * m->width + (int)v.x];
-			cur->color = clerp(0xFF0000, 0xFFFFFF, ft_ilerp(cur->z,
+			cur->color = clerp(0xFFFFFF, 0x009AFF, ft_ilerp(cur->z,
 				m->depth_min, m->depth_max));
 			v.x++;
 		}

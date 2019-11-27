@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clothor- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fcorrupt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/22 11:59:00 by clothor-          #+#    #+#             */
-/*   Updated: 2019/09/12 10:20:20 by clothor-         ###   ########.fr       */
+/*   Created: 2019/11/27 21:53:47 by fcorrupt          #+#    #+#             */
+/*   Updated: 2019/11/27 21:53:57 by fcorrupt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef struct		s_cam
 {
 	double		offsetx;
-	double		offset;
+	double		offsety;
 	double		x;
 	double		y;
 	int			scale;
