@@ -3,16 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: clothor- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fcorrupt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/22 23:12:10 by clothor-          #+#    #+#              #
-#    Updated: 2019/11/11 05:36:57 by clothor-         ###   ########.fr        #
+#    Created: 2019/12/08 19:44:37 by fcorrupt          #+#    #+#              #
+#    Updated: 2019/12/08 19:44:41 by fcorrupt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= fdf
 
-# src / obj files
 SRC		= main.c \
 		  reader.c \
 		  map.c \
@@ -26,23 +25,19 @@ SRC		= main.c \
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-# compiler
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -g
 
-# mlx library
 MLX		= ./miniLibX/
 MLX_LIB	= $(addprefix $(MLX),mlx.a)
 MLX_INC	= -I ./miniLibX
 MLX_LNK	= -L ./miniLibX -l mlx -framework OpenGL -framework AppKit
 
-# ft library
 FT		= ./libft/
 FT_LIB	= $(addprefix $(FT),libft.a)
 FT_INC	= -I ./libft
 FT_LNK	= -L ./libft -l ft
 
-# directories
 SRCDIR	= ./src/
 INCDIR	= ./includes/
 OBJDIR	= ./obj/
@@ -63,14 +58,17 @@ $(MLX_LIB):
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(MLX_LNK) $(FT_LNK) -lm -o $(NAME)
+	echo "FDF project is ready to use. You can start with ./fdf maps/EnterNameOfMap "
 
 clean:
 	rm -rf $(OBJDIR)
 	make -C $(FT) clean
 	make -C $(MLX) clean
+	echo "Cleaning"
 
 fclean: clean
 	rm -rf $(NAME)
 	make -C $(FT) fclean
+	echo "Total clean"
 
 re: fclean all
